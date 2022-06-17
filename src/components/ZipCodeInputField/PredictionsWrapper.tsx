@@ -2,13 +2,13 @@ import { FC, useState, useCallback } from "react";
 import Script from "react-load-script";
 import usePredictions, { StructuredPredictions } from "./usePredictions";
 
-interface AutoCompleteSearchWrapperProps {
+interface PredictionsWrapperProps {
   children: JSX.Element;
   value: string;
   onPredictionSelected: (value: string) => void;
 }
 
-const PredictionsWrapper: FC<AutoCompleteSearchWrapperProps> = ({
+const PredictionsWrapper: FC<PredictionsWrapperProps> = ({
   children,
   value,
   onPredictionSelected,
