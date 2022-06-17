@@ -2,6 +2,8 @@ import { FC, useState, useCallback } from "react";
 import Script from "react-load-script";
 import usePredictions, { StructuredPredictions } from "./usePredictions";
 
+const GOOGLE_PLACES_URL = ` https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}&libraries=places`;
+
 interface PredictionsWrapperProps {
   children: JSX.Element;
   value: string;
@@ -46,10 +48,7 @@ const PredictionsWrapper: FC<PredictionsWrapperProps> = ({
 
   return (
     <div>
-      <Script
-        url={process.env.REACT_APP_GOOGLE_PLACES_URL}
-        onLoad={handleScriptLoad}
-      />
+      <Script url={GOOGLE_PLACES_URL} onLoad={handleScriptLoad} />
       {children}
       <div className="predictions">{predictions.map(renderPrediction)}</div>
     </div>
