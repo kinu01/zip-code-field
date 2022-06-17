@@ -1,4 +1,4 @@
-import { FC, useState, useEffect, useCallback } from "react";
+import { FC, useState, useEffect, useCallback, memo } from "react";
 import { Icon } from "@iconify/react";
 import PredictionsWrapper from "./PredictionsWrapper";
 
@@ -89,4 +89,4 @@ const ZipCodeInputField: FC<ZipCodeInputFieldProps> = ({
   );
 };
 
-export default ZipCodeInputField;
+export default memo(ZipCodeInputField);

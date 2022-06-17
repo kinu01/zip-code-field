@@ -1,4 +1,4 @@
-import { FC, useState, useCallback } from "react";
+import { FC, useState, useCallback, memo } from "react";
 import Script from "react-load-script";
 import usePredictions, { StructuredPredictions } from "./usePredictions";
 
@@ -55,4 +55,4 @@ const PredictionsWrapper: FC<PredictionsWrapperProps> = ({
   );
 };
 
-export default PredictionsWrapper;
+export default memo(PredictionsWrapper);
